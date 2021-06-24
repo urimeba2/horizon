@@ -43,3 +43,5 @@ ChangeLog
 geckodriver.log
 package-lock.json
 test_reports/*
+
+Pipfile

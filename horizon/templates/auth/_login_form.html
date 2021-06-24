@@ -14,7 +14,7 @@
     <div class="panel-heading">
     {% block login_header %}
       <h3 class="login-title">
-        {% trans 'Log in' %}
+        {% trans 'Log in' %} <small class="text-muted">OpenStack by OnCloud</small>
       </h3>
     {% endblock %}
     </div>
@@ -81,6 +81,12 @@
         </button>
         <div class="clearfix"></div>
       {% endblock %}
+    </div>
+
+    <!-- Terminos y condiciones de Oncloud -->
+    <div class="container" id="terms">
+      <a href="{{STATIC_URL}}dashboard/documents/documento.pdf" target="_blank">Términos y condiciones</a>  
+      <a href="{{STATIC_URL}}dashboard/documents/documento.pdf" target="_blank">Política de privacidad</a>
     </div>
   </div>
 

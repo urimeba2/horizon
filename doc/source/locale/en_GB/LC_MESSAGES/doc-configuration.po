@@ -601,6 +601,13 @@ msgstr ""
 "WEBSSO_DEFAULT_REDIRECT is set to True"
 
 msgid ""
+"Along with the deprecation, the current plan on individual effective values "
+"in this setting is as follows."
+msgstr ""
+"Along with the deprecation, the current plan on individual effective values "
+"in this setting is as follows."
+
+msgid ""
 "Angular Templates are cached using this duration (in seconds) if `DEBUG`_ is "
 "set to ``False``.  Default value is ``2592000`` (or 30 days)."
 msgstr ""
@@ -3098,6 +3105,24 @@ msgstr ""
 "the GUI. For example themes, see: /horizon/openstack_dashboard/themes/"
 
 msgid ""
+"The support of ``SimpleTenantUsage`` will be replaced by a new setting which "
+"controls whether ``SimpleTenantUsage`` nova API feature is used or not (not "
+"implemented yet as of Victoria; planned in Wallaby release). This setting "
+"will not be droped until the new setting is implemented."
+msgstr ""
+"The support of ``SimpleTenantUsage`` will be replaced by a new setting which "
+"controls whether ``SimpleTenantUsage`` nova API feature is used or not (not "
+"implemented yet as of Victoria; planned in Wallaby release). This setting "
+"will not be dropped until the new setting is implemented."
+
+msgid ""
+"The support of the following values will be simply dropped as nova provides "
+"all features in the recent API versions."
+msgstr ""
+"The support of the following values will be simply dropped as Nova provides "
+"all features in the recent API versions."
+
+msgid ""
 "The top navbar in Horizon now uses a native Bootstrap ``navbar``.  There are "
 "a number of variables that can be used to customize this element.  Please "
 "see the **Navbar** section of your variables file for specifics on what can "
@@ -4339,6 +4364,18 @@ msgstr "``ADD_XSTATIC_MODULES``"
 msgid "``AUTO_DISCOVER_STATIC_FILES``"
 msgstr "``AUTO_DISCOVER_STATIC_FILES``"
 
+msgid "``AdminActions``"
+msgstr "``AdminActions``"
+
+msgid "``Aggregates``"
+msgstr "``Aggregates``"
+
+msgid "``BlockDeviceMappingV2Boot``"
+msgstr "``BlockDeviceMappingV2Boot``"
+
+msgid "``ConfigDrive``"
+msgstr "``ConfigDrive``"
+
 msgid "``DASHBOARD``"
 msgstr "``DASHBOARD``"
 
@@ -4351,11 +4388,17 @@ msgstr "``DEFAULT``"
 msgid "``DISABLED``"
 msgstr "``DISABLED``"
 
+msgid "``DiskConfig``"
+msgstr "``DiskConfig``"
+
 msgid "``EXTRA_STEPS``"
 msgstr "``EXTRA_STEPS``"
 
 msgid "``EXTRA_TABS``"
 msgstr "``EXTRA_TABS``"
+
+msgid "``Keypairs``"
+msgstr "``Keypairs``"
 
 msgid "``PANEL_DASHBOARD``"
 msgstr "``PANEL_DASHBOARD``"
@@ -4374,6 +4417,18 @@ msgstr "``PANEL``"
 
 msgid "``REMOVE_PANEL``"
 msgstr "``REMOVE_PANEL``"
+
+msgid "``SchedulerHints``"
+msgstr "``SchedulerHints``"
+
+msgid "``ServerGroups``"
+msgstr "``ServerGroups``"
+
+msgid "``Services``"
+msgstr "``Services``"
+
+msgid "``Shelve``"
+msgstr "``Shelve``"
 
 msgid "``UPDATE_HORIZON_CONFIG``"
 msgstr "``UPDATE_HORIZON_CONFIG``"
