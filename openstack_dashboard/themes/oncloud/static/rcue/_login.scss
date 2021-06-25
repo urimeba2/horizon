@@ -16,7 +16,7 @@
 }
 
 .field-label{
-  font-weight: bold;nn
+  font-weight: bold;
 }
 
 .form-control{
@@ -27,7 +27,7 @@
   height: 100%;
   body {
     background: #1D2226 url("#{$img-path}/jungle.jpeg") repeat-x 45% 0 !important;
-    background-size: 100% auto !important;
+    background-size: cover;
     color: #fff;
   }
   body .password-icon {
@@ -165,7 +165,17 @@
   }
 }
 
+a{
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: bolder;
+}
 
+a:hover{
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: bolder;
+}
 
 // Custom CSS
 #terms{
@@ -175,4 +185,20 @@
 
 .w-50{
   width: 50%;
+}
+
+.mt-1{
+  margin-top: 1rem !important;
+}
+
+.mt-2{
+  margin-top: 2rem !important;
+}
+
+.mt-3{
+  margin-top: 3rem !important;
+}
+
+.mt-5{
+  margin-top: 5rem !important;
 }

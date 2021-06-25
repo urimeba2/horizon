@@ -10,69 +10,74 @@
 
 {% block modal-body %}
 
-  {% comment %}
-    These fake fields are required to prevent Chrome v34+ from autofilling form.
-  {% endcomment %}
-  {% if HORIZON_CONFIG.password_autocomplete != "on" %}
-  <div class="fake_credentials" style="display: none">
-    <input type="text" name="fake_email" value="" />
-    <input type="password" name="fake_password" value="" />
+{% comment %}
+These fake fields are required to prevent Chrome v34+ from autofilling form.
+{% endcomment %}
+{% if HORIZON_CONFIG.password_autocomplete != "on" %}
+<div class="fake_credentials" style="display: none">
+  <input type="text" name="fake_email" value="" />
+  <input type="password" name="fake_password" value="" />
+</div>
+{%endif%}
+<!-- {% include "auth/_description.html" %} -->
+
+<fieldset hz-login-finder>
+  {% if request.user.is_authenticated and 'next' in request.GET %}
+  <div class="control-group clearfix error">
+    <span class="help-inline">
+      <p>{% trans "You don't have permissions to access:" %}</p>
+      <p><b>{{ request.GET.next }}</b></p>
+      <p>{% trans "Login as different user or go back to" %}
+        <a href="{% url 'horizon:user_home' %}">{% trans "home page" %}</a>
+      </p>
+    </span>
   </div>
-  {%endif%}
-  <!-- {% include "auth/_description.html" %} -->
+  {% if request.COOKIES.logout_reason %}
+  <div class="form-group clearfix error" id="logout_reason">
+    <span class="help-block alert alert-danger">
+      <p>{{ request.COOKIES.logout_reason }}</p>
+    </span>
+  </div>
+  {% endif %}
 
-  <fieldset hz-login-finder>
-    {% if request.user.is_authenticated and 'next' in request.GET %}
-    <div class="control-group clearfix error">
-      <span class="help-inline"><p>{% trans "You don't have permissions to access:" %}</p>
-        <p><b>{{ request.GET.next }}</b></p>
-        <p>{% trans "Login as different user or go back to" %}
-        <a href="{% url 'horizon:user_home' %}">{% trans "home page" %}</a></p>
-      </span>
-    </div>
-    {% if request.COOKIES.logout_reason %}
-    <div class="form-group clearfix error" id="logout_reason">
-        <span class="help-block alert alert-danger"><p>{{ request.COOKIES.logout_reason }}</p></span>
-    </div>
-    {% endif %}
-
-    {% endif %}
-    {% if next %}<input type="hidden" name="{{ redirect_field_name }}" value="{{ next }}" />{% endif %}
-    {% include "horizon/common/_form_fields.html" %}
-  </fieldset>
+  {% endif %}
+  {% if next %}<input type="hidden" name="{{ redirect_field_name }}" value="{{ next }}" />{% endif %}
+  {% include "horizon/common/_form_fields.html" %}
+</fieldset>
 {% endblock %}
 
 {% block modal-footer %}
-  <button id="loginBtn" type="submit" class="btn btn-success btn-large">
-    <span ng-show="auth_type==='credentials'">{% trans "Sign In" %}</span>
-    <span ng-hide="auth_type==='credentials'" ng-cloak>{% trans "Connect" %}</span>
-  </button>
-  <br>
-  <div class="row">
-    <p>
-      Don't have an account? <b><a style="color: rgb(9, 78, 9);" href="/signup/">SignUp.</a></b>
-    </p>
-    <p>
-      Can't log in? <a href="/forgot_password/">Reset password.</a>
-    </p>
-
+<button id="loginBtn" type="submit" class="btn btn-success btn-large">
+  <span ng-show="auth_type==='credentials'">{% trans "Sign In" %}</span>
+  <!-- <span ng-hide="auth_type==='credentials'" ng-cloak>{% trans "Connect" %}</span> -->
+</button>
+<br>
+<div class="row mt-1">
+  <div class="w-100 mt-1">
     <div class="span2">
       <a href="{{STATIC_URL}}dashboard/documents/documento.pdf" target="_blank">
-        Términos y condiciones
-      </a>  
+        Terms and conditions
+      </a>
     </div>
 
     <div class="span2">
       <a href="{{STATIC_URL}}dashboard/documents/documento.pdf" target="_blank">
-        Política de privacidad
+        Privacy Policy
       </a>
     </div>
   </div>
 
-  
-  
+  <div class="w-10 mt-2">
+    <p>
+      Don't have an account? <b><a href="/signup/">SignUp.</a></b>
+    </p>
+    <p>
+      Can't log in? <a href="/forgot_password/">Reset password.</a>
+    </p>
+  </div>
+
+</div>
+
+
+
 {% endblock %}
-
-
-
-
